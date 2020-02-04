@@ -33,9 +33,9 @@ class Quotes extends Component {
 
   render(){
     return (
-      <div>
+      <main>
         <Quote character={this.state.character} quote={this.state.quote} pic={this.state.pic} onClick={this.handleClick} />
-      </div>
+      </main>
     );
   }
 }

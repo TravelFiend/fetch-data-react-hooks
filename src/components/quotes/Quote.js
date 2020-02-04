@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Quote.css';
 
 const Quote = ({ character, quote, pic, handleClick }) => (
-  <section>
+  <section className={styles.Quote}>
     <h2>{character}</h2>
     <div>
       <img src={pic} />
