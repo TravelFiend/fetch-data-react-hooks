@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Quote from '../components/quotes/Quote';
-import { getQuotes } from '../services/getQuotes';
+import getQuotes from '../services/getQuotes';
 
 class Quotes extends Component {
   state = {
@@ -10,10 +10,10 @@ class Quotes extends Component {
   }
 
   componentDidMount(){
-    this.fetchIt();
+    this.fetch();
   }
 
-  fetchIt(){
+  fetch(){
     return getQuotes()
       .then(quotes => {
         const randomIndex = Math.floor(Math.random() * quotes.length);
@@ -22,13 +22,13 @@ class Quotes extends Component {
           character: quotes[randomIndex].character,
           quote: quotes[randomIndex].quote,
           pic: quotes[randomIndex].image
-        });});
+        });
+      });
   }
 
   handleClick = event => {
     event.preventDefault();
-
-    this.fetchIt();
+    this.fetch();
   }
 
   render(){
