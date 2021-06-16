@@ -1,4 +1,4 @@
-export default () => {
-  return fetch('https://futuramaapi.herokuapp.com/api/quotes/163')
+export default (url) => {
+  return fetch(url)
     .then(res => res.json());
 };
